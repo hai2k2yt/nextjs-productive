@@ -1,0 +1,63 @@
+{
+  "Index": {
+    "title": "Hello world"
+  },
+  "AUTH": {
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "USERNAME": "Username",
+    "SIGN_IN": {
+      "TITLE": "Sign in TE",
+      "DESC": "Welcome back to ....",
+      "SUBMIT_BTN": "Sign in",
+      "FORGOT_PASSWORD": "Forgot password?",
+      "DONT_HAVE_ACCOUNT": {
+        "FIRST": "Don't have an account?",
+        "SECOND": "Sign up"
+      },
+      "PROVIDERS": {
+        "GOOGLE": "Sign in with Google",
+        "APPLE": "Sign in with Apple",
+        "GITHUB": "Sign in with Github"
+      }
+    },
+    "SIGN_UP": {
+      "TITLE": "Sign up",
+      "DESC": "Create your account",
+      "SUBMIT_BTN": "Sign up",
+      "FORGOT_PASSWORD": "Forgot password?",
+      "HAVE_ACCOUNT": {
+        "FIRST": "Already have an account?",
+        "SECOND": "Sign in"
+      },
+      "TERMS": {
+        "FIRST": "By signing in up you agree to our",
+        "SECOND": "Terms of Service"
+      },
+      "PROVIDERS": {
+        "GOOGLE": "Sign up with Google",
+        "APPLE": "Sign up with Apple",
+        "GITHUB": "Sign up with Github"
+      }
+    }
+
+  },
+  "MESSAGES": {
+    "ERRORS": {
+      "DEFAULT": "Something went wrong. Please try again",
+      "TAKEN_USERNAME": "Username is already taken",
+      "TAKEN_EMAIL": "This email is already in use...",
+      "DB_ERROR": "We are currently having problems. Please try again later",
+      "WRONG_DATA": "The data you provided is incorrect. Please provide the correct one",
+      "NO_USER": "User was not found. Please enter a valid email",
+      "WRONG_PASSWORD": "The entered password is incorrect. Please enter correct one"
+    },
+    "SUCCESS": {
+      "SIGN_UP": "Account was created!",
+      "SIGN_IN": "You have been logged in!"
+    },
+    "PENDING": {
+      "LOADING": "Please wait"
+    }
+  }
+}
