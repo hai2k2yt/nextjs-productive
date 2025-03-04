@@ -109,6 +109,7 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         session.user.image = user.image
         session.user.completedOnboarding = user.completedOnboarding
+        session.user.username = user.username
       }
 
       console.log('Session: ', session)

@@ -20,9 +20,9 @@ model User {
   accounts      Account[]
   sessions      Session[]
 
-  // createdWorkspaces Workspace[] @relation("CreatedBy")
-  // subscriptions Subscription[]
-  // useCase UseCase?
+  createdWorkspaces Workspace[] @relation("CreatedBy")
+  subscriptions Subscription[]
+  useCase UseCase?
 }
  
 model Account {
@@ -63,38 +63,38 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-// enum UserPermission {
-//   ADMIN
-//   CAN_EDIT
-//   READ_ONLY
-// }
-//
-// enum UseCase {
-//   WORK
-//   STUDY
-//   PERSONAL_USE
-// }
-//
-// model Workspace {
-//   id String @id @default(cuid())
-//   name String
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-//   creatorId String
-//   Creator User? @relation("CreatedBy", fields: [creatorId], references: [id], onDelete: Cascade)
-//   subscribers Subscription[]
-//
-//   @@index([creatorId])
-// }
-//
-// model Subscription {
-//   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-//   userId String
-//   workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
-//   workspaceId String
-//   userRole UserPermission @default(READ_ONLY)
-//
-//   @@id([userId, workspaceId])
-//   @@index([workspaceId])
-//   @@index([userId])
-// }
+enum UserPermission {
+  ADMIN
+  CAN_EDIT
+  READ_ONLY
+}
+
+enum UseCase {
+  WORK
+  STUDY
+  PERSONAL_USE
+}
+
+model Workspace {
+  id String @id @default(cuid())
+  name String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  creatorId String
+  Creator User? @relation("CreatedBy", fields: [creatorId], references: [id], onDelete: Cascade)
+  subscribers Subscription[]
+
+  @@index([creatorId])
+}
+
+model Subscription {
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId String
+  userRole UserPermission @default(READ_ONLY)
+
+  @@id([userId, workspaceId])
+  @@index([workspaceId])
+  @@index([userId])
+}

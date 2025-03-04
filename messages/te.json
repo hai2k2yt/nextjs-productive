@@ -42,6 +42,28 @@
     }
 
   },
+  "CHANGE_PROFILE_IMAGE": {
+    "TITLE": "Send a photo!",
+    "BUTTON": "Choose a photo"
+  },
+  "ONBOARDING_FORM": {
+    "FIRST_STEP": {
+      "TITLE": {
+        "FIRST": "Let's prepare you",
+        "SECOND": "ready"
+      },
+      "PHOTO": "Add photo",
+      "INPUTS": {
+        "NAME": "First name",
+        "SURNAME": "Surname"
+      },
+      "PLACEHOLDER": {
+        "NAME": "Name",
+        "SURNAME": "Surname"
+      }
+    },
+    "NEXT_BTN": "Continue"
+  },
   "MESSAGES": {
     "ERRORS": {
       "DEFAULT": "Something went wrong. Please try again",
