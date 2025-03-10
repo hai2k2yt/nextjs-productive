@@ -6,11 +6,9 @@ import {SummarySection} from "@/components/onboarding/SummarySection";
 const Onboarding = async () => {
   const session = await checkIfUserCompletedOnboarding("/onboarding")
 
-  console.log(session)
-
   return (
     <OnboardingFormProvider session={session}>
-      <AdditionalInfoSection />
+      <AdditionalInfoSection profileImage={session.user.image} />
       <SummarySection />
     </OnboardingFormProvider>
   )

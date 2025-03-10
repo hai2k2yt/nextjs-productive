@@ -8,19 +8,20 @@ import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
 import {ActionType} from "@/types/onBoardingContext";
 import {Button} from "@/components/ui/button";
 import {ArrowRight} from "lucide-react";
+import {useTranslations} from "next-intl";
 
 const useCases = [
   {
     case: "WORK",
-    title: "For work"
+    title: "SECOND_STEP.WORK"
   },
   {
     case: "STUDY",
-    title: "For study"
+    title: "SECOND_STEP.STUDY"
   },
   {
     case: "PERSONAL_USE",
-    title: "For Personal Use"
+    title: "SECOND_STEP.PERSONAL"
   }
 ]
 
@@ -29,6 +30,8 @@ export const SecondStep = () => {
   const form = useForm<AdditionalUserInfoSecondPart>({
     resolver: zodResolver(additionalUserInfoSecondPart)
   })
+
+  const t = useTranslations("ONBOARDING_FORM")
 
   const onSubmit = (data: AdditionalUserInfoSecondPart) => {
     dispatch({type: ActionType.USECASE, payload: data.useCase})
@@ -39,10 +42,10 @@ export const SecondStep = () => {
     <>
       <div className="flex flex-col justify-center items-center gap-4 w-full mt-10 text-center">
         <h2 className="font-bold text-4xl md:text-5xl flex flex-col items-center max-w-xs">
-          How will you use Super Productive?
+          {t("SECOND_STEP.TITLE")}
         </h2>
         <p className="max-w-lg text-muted-foreground">
-          We will use this information to personalize the experience for you
+          {t("SECOND_STEP.INFO")}
         </p>
       </div>
       <div className="max-w-md w-full space-y-8 mt-14">
@@ -74,7 +77,7 @@ export const SecondStep = () => {
                             <RadioGroupItem value={useCase.case} />
                           </FormControl>
                           <FormLabel className="font-normal lg:text-lg h-full left-9 flex items-center absolute w-full cursor-pointer">
-                            {useCase.title}
+                            {t(useCase.title)}
                           </FormLabel>
                         </FormItem>
                       ))}
@@ -88,7 +91,7 @@ export const SecondStep = () => {
               disabled={!form.formState.isValid}
               type="submit"
             >
-              Continue
+              {t("NEXT_BTN")}
               <ArrowRight className="" width={18} height={18} />
             </Button>
           </form>

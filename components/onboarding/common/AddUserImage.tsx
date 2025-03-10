@@ -31,7 +31,7 @@ export const AddUserImage = ({profileImage}: Props) => {
   const router = useRouter()
   const {update} = useSession()
   const m = useTranslations("MESSAGES")
-  const t = useTranslations("CHANGE_IMAGE_PROFILE")
+  const t = useTranslations("CHANGE_PROFILE_IMAGE")
 
   const form = useForm<ImageSchema>({
     resolver: zodResolver(imageSchema),
@@ -77,7 +77,7 @@ export const AddUserImage = ({profileImage}: Props) => {
   }, [imagePreview, profileImage])
 
   const { startUpload, isUploading} = useUploadThing(
-    "profilePictureUploader", {
+    "imageUploader", {
     onUploadError: (error) => {
       toast({
         title: m("ERRORS.UPLOAD_TITLE"),
@@ -146,7 +146,7 @@ export const AddUserImage = ({profileImage}: Props) => {
 
   const onSubmit = async (data: ImageSchema) => {
     const image: File = data.image
-    startUpload([image])
+    await startUpload([image])
 
   }
 
@@ -219,6 +219,7 @@ export const AddUserImage = ({profileImage}: Props) => {
                             type="file"
                             id="image"
                             className="hidden"
+                            accept="image/*"
                           />
                         </div>
                       </FormControl>

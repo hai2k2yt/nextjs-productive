@@ -62,6 +62,13 @@
         "SURNAME": "Surname"
       }
     },
+    "SECOND_STEP": {
+      "TITLE": "How you will use",
+      "INFO": "We use this information to personalize your experience",
+      "WORK": "For Work",
+      "STUDY": "For Study",
+      "PERSONAL": "For personal use"
+    },
     "NEXT_BTN": "Continue"
   },
   "MESSAGES": {

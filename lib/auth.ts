@@ -98,6 +98,8 @@ export const authOptions: NextAuthOptions = {
         session.user.email = token.email
         session.user.image = token.picture
         session.user.username = token.username
+        session.user.surname = token.surname
+        session.user.completedOnboarding = !!token.completedOnboarding
       }
 
       const user = await db.user.findUnique({

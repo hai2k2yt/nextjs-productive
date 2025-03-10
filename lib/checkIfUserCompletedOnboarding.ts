@@ -1,5 +1,5 @@
 import {getAuthSession} from "@/lib/auth";
-import {redirect} from "next/navigation";
+import {redirect} from "@/i18n/navigation";
 
 export const checkIfUserCompletedOnboarding = async (currentPath: string) => {
   const session = await getAuthSession();

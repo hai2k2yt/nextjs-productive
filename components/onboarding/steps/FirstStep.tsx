@@ -57,19 +57,19 @@ export const FirstStep = ({profileImage}: Props) => {
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-1.5">
-            <div className="sapce-y-1.8">
+            <div className="space-y-1.8">
               <FormField
                 control={form.control}
                 name="name"
                 render={({field}) => (
                   <FormItem>
                     <FormLabel className="text-muted-foreground">
-                      {t("FIRST_STEPS.INPUTS.NAME")}
+                      {t("FIRST_STEP.INPUTS.NAME")}
                     </FormLabel>
                     <FormControl>
                       <Input
                         className="bg-muted"
-                        placeholder={t("FIRST_STEPS.PLACEHOLDERS.NAME")}
+                        placeholder={t("FIRST_STEP.PLACEHOLDER.NAME")}
                         {...field}
                       />
                     </FormControl>
@@ -84,12 +84,12 @@ export const FirstStep = ({profileImage}: Props) => {
                 render={({field}) => (
                   <FormItem>
                     <FormLabel className="text-muted-foreground">
-                      {t("FIRST_STEPS.INPUTS.SURNAME")}
+                      {t("FIRST_STEP.INPUTS.SURNAME")}
                     </FormLabel>
                     <FormControl>
                       <Input
                         className="bg-muted"
-                        placeholder={t("FIRST_STEPS.PLACEHOLDERS.SURNAME")}
+                        placeholder={t("FIRST_STEP.PLACEHOLDER.SURNAME")}
                         {...field}
                       />
                     </FormControl>

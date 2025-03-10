@@ -6,6 +6,7 @@ import {SecondStep} from "@/components/onboarding/steps/SecondStep";
 import {ThirdStep} from "@/components/onboarding/steps/ThirdStep";
 import {FormStepsInfo} from "@/components/onboarding/FormStepsInfo";
 import {AppTitle} from "@/components/ui/app-title";
+import {Finish} from "@/components/onboarding/steps/Finish";
 
 interface Props {
   profileImage?: string | null
@@ -22,6 +23,7 @@ export const AdditionalInfoSection = ({profileImage}: Props) => {
         {currentStep === 1 && <FirstStep profileImage={profileImage} />}
         {currentStep === 2 && <SecondStep/>}
         {currentStep === 3 && <ThirdStep/>}
+        {currentStep === 4 && <Finish/>}
       </div>
       <FormStepsInfo />
     </section>
